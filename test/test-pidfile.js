@@ -75,7 +75,7 @@ tap.test('pidfile', function(t) {
 
   t.test('should succeed if pidfile has non-existent pid', function(t) {
     unlink();
-    fs.writeFileSync(FILE, noSuchPid());
+    fs.writeFileSync(FILE, noSuchPid().toString());
     create();
     assertValid(t);
     t.end();
